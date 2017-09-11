@@ -14,142 +14,51 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--CategoryCV-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CategoryCV" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-o5-2Sr">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RgQ-o5-2Sr">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="kTU-tw-jUd">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="200" id="kTU-tw-jUd" customClass="CategoryCell" customModule="FoodBook" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kTU-tw-jUd" id="klV-cS-vdU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meat" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-IN-wdp">
-                                                    <rect key="frame" x="0.0" y="3" width="375" height="143.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="199" id="rRZ-1f-9Sk"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kött" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-ul-9oa">
-                                                    <rect key="frame" x="151" y="48" width="73.5" height="53.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kött" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1BT-ul-9oa" customClass="ShadowText" customModule="FoodBook" customModuleProvider="target">
+                                                    <rect key="frame" x="151" y="73" width="74" height="54"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="39"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Edb-IN-wdp" firstAttribute="leading" secondItem="klV-cS-vdU" secondAttribute="leading" id="FMY-Ps-Oee"/>
-                                                <constraint firstItem="1BT-ul-9oa" firstAttribute="centerY" secondItem="klV-cS-vdU" secondAttribute="centerY" id="JhL-yT-De7"/>
-                                                <constraint firstItem="1BT-ul-9oa" firstAttribute="centerX" secondItem="klV-cS-vdU" secondAttribute="centerX" id="dTk-Gv-Nt6"/>
-                                                <constraint firstAttribute="trailing" secondItem="Edb-IN-wdp" secondAttribute="trailing" id="kFs-g1-SQq"/>
-                                                <constraint firstAttribute="bottom" secondItem="Edb-IN-wdp" secondAttribute="bottom" constant="3" id="mNe-jN-1uq"/>
-                                                <constraint firstItem="Edb-IN-wdp" firstAttribute="top" secondItem="klV-cS-vdU" secondAttribute="top" constant="3" id="mPl-pn-KG4"/>
+                                                <constraint firstAttribute="trailing" secondItem="Edb-IN-wdp" secondAttribute="trailing" id="3V5-wi-ggk"/>
+                                                <constraint firstItem="1BT-ul-9oa" firstAttribute="centerX" secondItem="klV-cS-vdU" secondAttribute="centerX" id="45u-dy-hs5"/>
+                                                <constraint firstAttribute="bottom" secondItem="Edb-IN-wdp" secondAttribute="bottom" id="N6I-eJ-6Zn"/>
+                                                <constraint firstItem="Edb-IN-wdp" firstAttribute="leading" secondItem="klV-cS-vdU" secondAttribute="leading" id="oJe-mf-Tdx"/>
+                                                <constraint firstItem="1BT-ul-9oa" firstAttribute="centerY" secondItem="klV-cS-vdU" secondAttribute="centerY" id="qnB-8j-XqH"/>
+                                                <constraint firstItem="Edb-IN-wdp" firstAttribute="top" secondItem="klV-cS-vdU" secondAttribute="top" id="wgP-IZ-Ffa"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="WrM-Kj-78g">
-                                        <rect key="frame" x="0.0" y="178" width="375" height="150"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WrM-Kj-78g" id="Kux-pp-hIr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pasta" translatesAutoresizingMaskIntoConstraints="NO" id="frK-u1-aAd">
-                                                    <rect key="frame" x="0.0" y="3" width="375" height="143.5"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pasta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xc6-rs-smD">
-                                                    <rect key="frame" x="141" y="48" width="93.5" height="53.5"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="39"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="frK-u1-aAd" secondAttribute="bottom" constant="3" id="5N9-2S-qob"/>
-                                                <constraint firstItem="frK-u1-aAd" firstAttribute="leading" secondItem="Kux-pp-hIr" secondAttribute="leading" id="6Ut-Gy-nxq"/>
-                                                <constraint firstItem="xc6-rs-smD" firstAttribute="centerY" secondItem="Kux-pp-hIr" secondAttribute="centerY" id="CGo-3Y-gpN"/>
-                                                <constraint firstItem="frK-u1-aAd" firstAttribute="top" secondItem="Kux-pp-hIr" secondAttribute="top" constant="3" id="OCI-yk-Dhb"/>
-                                                <constraint firstAttribute="trailing" secondItem="frK-u1-aAd" secondAttribute="trailing" id="e0H-sH-20T"/>
-                                                <constraint firstItem="xc6-rs-smD" firstAttribute="centerX" secondItem="Kux-pp-hIr" secondAttribute="centerX" id="sH5-EP-pDy"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="GH9-cP-ltB">
-                                        <rect key="frame" x="0.0" y="328" width="375" height="150"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GH9-cP-ltB" id="Uo9-jj-MbW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegetarian" translatesAutoresizingMaskIntoConstraints="NO" id="H76-Mw-MvT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetarisk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gOS-92-GFE">
-                                                    <rect key="frame" x="93" y="48" width="189" height="54"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="39"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="H76-Mw-MvT" secondAttribute="trailing" id="Bpl-tA-Q6S"/>
-                                                <constraint firstItem="gOS-92-GFE" firstAttribute="centerY" secondItem="Uo9-jj-MbW" secondAttribute="centerY" id="Dcv-0l-7C3"/>
-                                                <constraint firstAttribute="bottom" secondItem="H76-Mw-MvT" secondAttribute="bottom" id="GIK-b0-RHD"/>
-                                                <constraint firstItem="H76-Mw-MvT" firstAttribute="top" secondItem="Uo9-jj-MbW" secondAttribute="top" id="cP8-WU-Rjw"/>
-                                                <constraint firstItem="gOS-92-GFE" firstAttribute="centerX" secondItem="Uo9-jj-MbW" secondAttribute="centerX" id="uNT-ma-0Ch"/>
-                                                <constraint firstItem="H76-Mw-MvT" firstAttribute="leading" secondItem="Uo9-jj-MbW" secondAttribute="leading" id="wde-CH-Qfb"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="150" id="R1u-L8-NMZ">
-                                        <rect key="frame" x="0.0" y="478" width="375" height="150"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R1u-L8-NMZ" id="fQe-za-SMz">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bread" translatesAutoresizingMaskIntoConstraints="NO" id="6bg-kh-1Sa">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="149.5"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bröd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESw-bE-lmv">
-                                                    <rect key="frame" x="144" y="48" width="88" height="54"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="39"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="6bg-kh-1Sa" firstAttribute="top" secondItem="fQe-za-SMz" secondAttribute="top" id="5KV-RP-lcj"/>
-                                                <constraint firstAttribute="bottom" secondItem="6bg-kh-1Sa" secondAttribute="bottom" id="ON7-iU-Shy"/>
-                                                <constraint firstItem="ESw-bE-lmv" firstAttribute="centerX" secondItem="fQe-za-SMz" secondAttribute="centerX" id="R3u-O2-0V0"/>
-                                                <constraint firstItem="ESw-bE-lmv" firstAttribute="centerY" secondItem="fQe-za-SMz" secondAttribute="centerY" id="az0-Xy-BaK"/>
-                                                <constraint firstItem="6bg-kh-1Sa" firstAttribute="leading" secondItem="fQe-za-SMz" secondAttribute="leading" id="cuO-e5-pkU"/>
-                                                <constraint firstAttribute="trailing" secondItem="6bg-kh-1Sa" secondAttribute="trailing" id="m5h-Ql-hpC"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="125" id="HyR-YP-9bN">
-                                        <rect key="frame" x="0.0" y="628" width="375" height="125"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HyR-YP-9bN" id="Q6L-gR-hi9">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="124.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vegetarisk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVf-gs-zVk">
-                                                    <rect key="frame" x="93" y="41" width="189" height="54"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="39"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryImage" destination="Edb-IN-wdp" id="WCA-ip-72V"/>
+                                            <outlet property="categoryTitle" destination="1BT-ul-9oa" id="q5E-JH-c12"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -164,6 +73,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="wQs-Sy-QJ8"/>
+                    <connections>
+                        <outlet property="categoryTable" destination="RgQ-o5-2Sr" id="2Fs-Xd-yrx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -177,6 +89,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="k9r-Hr-FvT">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.12031443999541329" green="0.27003959933424104" blue="0.42407598350253806" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -189,9 +102,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bread" width="1619" height="855"/>
         <image name="meat" width="1920" height="1183"/>
-        <image name="pasta" width="1619" height="1183"/>
-        <image name="vegetarian" width="1619" height="1080"/>
     </resources>
 </document>
