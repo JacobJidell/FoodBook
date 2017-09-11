@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490E60341F66FDA100339E7B /* ShadowText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490E60331F66FDA100339E7B /* ShadowText.swift */; };
 		49D19FA31F62D24D001DE499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D19FA21F62D24D001DE499 /* AppDelegate.swift */; };
 		49D19FA51F62D24D001DE499 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D19FA41F62D24D001DE499 /* ViewController.swift */; };
 		49D19FA81F62D24D001DE499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D19FA61F62D24D001DE499 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		490E60331F66FDA100339E7B /* ShadowText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowText.swift; sourceTree = "<group>"; };
 		49D19F9F1F62D24D001DE499 /* FoodBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D19FA21F62D24D001DE499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D19FA41F62D24D001DE499 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		490E60311F66ABA100339E7B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				490E60331F66FDA100339E7B /* ShadowText.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		490E60321F66ABA700339E7B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49D19FA41F62D24D001DE499 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		49D19F961F62D24D001DE499 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +72,9 @@
 		49D19FA11F62D24D001DE499 /* FoodBook */ = {
 			isa = PBXGroup;
 			children = (
+				490E60321F66ABA700339E7B /* Controllers */,
+				490E60311F66ABA100339E7B /* Views */,
 				49D19FA21F62D24D001DE499 /* AppDelegate.swift */,
-				49D19FA41F62D24D001DE499 /* ViewController.swift */,
 				49D19FA61F62D24D001DE499 /* Main.storyboard */,
 				49D19FA91F62D24D001DE499 /* Assets.xcassets */,
 				49D19FAB1F62D24D001DE499 /* LaunchScreen.storyboard */,
@@ -137,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D19FA51F62D24D001DE499 /* ViewController.swift in Sources */,
+				490E60341F66FDA100339E7B /* ShadowText.swift in Sources */,
 				49D19FA31F62D24D001DE499 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
