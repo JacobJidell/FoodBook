@@ -10,10 +10,17 @@ import UIKit
 
 @IBDesignable
 class ShadowText: UILabel {
-
+    
+    override func prepareForInterfaceBuilder() {
+        customizedView()
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        customizedView()
+    }
+    
+    func customizedView() {
         layer.shadowColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         layer.shadowOpacity = 1
         layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
