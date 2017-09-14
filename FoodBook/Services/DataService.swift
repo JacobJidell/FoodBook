@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import Firebase
 
 class DataService {
     static let instance = DataService()
+    
+    static var category: String?
     
     private let Categories = [
         Category(title: "Kött", imageName: "meat.png"),
@@ -23,6 +26,27 @@ class DataService {
     
     func getCategories() -> [Category] {
         return Categories
+    }
+    
+    func getAllRecipes(handler: @escaping (_ recipe: [Recipe]) -> ()) {
+        var recipeArray = [Recipe]()
+        
+        REF_ACTIVE_CATEGORY.observeSingleEvent(of: .value) { (recipeSnapshot) in
+            guard let recipeSnapshot = recipeSnapshot.children.allObjects as? [DataSnapshot] else { return }
+            
+            for recipe in recipeSnapshot {
+                let recipeName = recipe.childSnapshot(forPath: "Name").value as! String
+                let recipeTime = recipe.childSnapshot(forPath: "Time").value as! Int
+                let recipeImageName = recipe.childSnapshot(forPath: "ImageName").value as! String
+                let recipeInfo = recipe.childSnapshot(forPath: "Information").value as! String
+                let recipeInstructions = recipe.childSnapshot(forPath: "Instruction").value as! String
+                let recipeIngredients = recipe.childSnapshot(forPath: "Ingredients").value as! String
+                let recipe = Recipe(recipeName: recipeName, recipeImageName: recipeImageName, recipeTime: recipeTime, recipeInformation: recipeInfo, ingredients: recipeIngredients, instructions: recipeInstructions)
+                recipeArray.append(recipe)
+            }
+            
+            handler(recipeArray)
+        }
     }
 }
 

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Firebase
 
-class CategoryCV: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class CategoryVC: UIViewController {
     
     @IBOutlet weak var categoryTable: UITableView!
     
@@ -18,6 +19,21 @@ class CategoryCV: UIViewController, UITableViewDataSource, UITableViewDelegate {
         categoryTable.delegate = self
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = DataService.instance.getCategories()[indexPath.row]
+        performSegue(withIdentifier: "RecipeVC", sender: category)
+        DataService.category = category.title
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let recipeVC = segue.destination as? RecipeVC {
+            assert(sender as? Category != nil)
+            recipeVC.setCategory(category: sender as! Category)
+        }
+    }
+}
+
+extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DataService.instance.getCategories().count
     }
@@ -31,7 +47,4 @@ class CategoryCV: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return CategoryCell()
         }
     }
-    
-
 }
-
