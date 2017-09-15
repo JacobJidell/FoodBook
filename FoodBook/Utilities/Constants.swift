@@ -14,7 +14,7 @@ import Firebase
 public let REF = Database.database().reference()
 public let REF_USER = REF.child(USER_ID!)
 public let REF_CATEGORIES = REF_USER.child("categories")
-public var REF_ACTIVE_CATEGORY = REF_CATEGORIES.child(DataService.category!)
+public var REF_ACTIVE_CATEGORY = REF_CATEGORIES.child(categoryTitleSender!)
 
 //Authenication, User ID
 public let USER_ID = Auth.auth().currentUser?.uid

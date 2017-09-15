@@ -21,8 +21,9 @@ class CategoryVC: UIViewController {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let category = DataService.instance.getCategories()[indexPath.row]
+        categoryTitleSender = category.title
         performSegue(withIdentifier: "RecipeVC", sender: category)
-        DataService.category = category.title
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

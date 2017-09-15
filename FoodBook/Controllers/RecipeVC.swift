@@ -30,7 +30,7 @@ class RecipeVC: UIViewController{
     }
     
     func setCategory(category: Category) {
-        DataService.category = category.title
+        categoryTitleSender = category.title
     }
     
     

@@ -9,10 +9,10 @@
 import Foundation
 import Firebase
 
+var categoryTitleSender: String?
+
 class DataService {
     static let instance = DataService()
-    
-    static var category: String?
     
     private let Categories = [
         Category(title: "Kött", imageName: "meat.png"),
@@ -30,8 +30,8 @@ class DataService {
     
     func getAllRecipes(handler: @escaping (_ recipe: [Recipe]) -> ()) {
         var recipeArray = [Recipe]()
-        
-        REF_ACTIVE_CATEGORY.observeSingleEvent(of: .value) { (recipeSnapshot) in
+        let titleSender: String = categoryTitleSender!
+        REF_CATEGORIES.child(titleSender).observeSingleEvent(of: .value) { (recipeSnapshot) in
             guard let recipeSnapshot = recipeSnapshot.children.allObjects as? [DataSnapshot] else { return }
             
             for recipe in recipeSnapshot {
@@ -44,7 +44,6 @@ class DataService {
                 let recipe = Recipe(recipeName: recipeName, recipeImageName: recipeImageName, recipeTime: recipeTime, recipeInformation: recipeInfo, ingredients: recipeIngredients, instructions: recipeInstructions)
                 recipeArray.append(recipe)
             }
-            
             handler(recipeArray)
         }
     }
