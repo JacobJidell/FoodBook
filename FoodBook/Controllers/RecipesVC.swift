@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RecipeVC: UIViewController{
+class RecipesVC: UIViewController{
     
-    @IBOutlet weak var categoryTitle: UILabel!
+    @IBOutlet weak var categoryTitleLbl: UINavigationItem!
     @IBOutlet weak var recipeTable: UITableView!
     
     var recipesArray = [Recipe]()
@@ -31,12 +31,13 @@ class RecipeVC: UIViewController{
     
     func setCategory(category: Category) {
         categoryTitleSender = category.title
+        categoryTitleLbl.title = category.title
     }
     
     
 }
 
-extension RecipeVC: UITableViewDelegate, UITableViewDataSource {
+extension RecipesVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

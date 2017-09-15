@@ -27,7 +27,7 @@ class CategoryVC: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let recipeVC = segue.destination as? RecipeVC {
+        if let recipeVC = segue.destination as? RecipesVC {
             assert(sender as? Category != nil)
             recipeVC.setCategory(category: sender as! Category)
         }
