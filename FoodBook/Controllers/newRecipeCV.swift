@@ -10,9 +10,17 @@ import UIKit
 
 class newRecipeCV: UIViewController {
 
+    @IBOutlet weak var minuteLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let notificationCenter = NotificationCenter.default
     }
 
+    @IBAction func minuteSliderValueChanged(sender: UISlider) {
+        var value: Int = Int(sender.value)
+        minuteLbl.text = String("\(value) minuter")
+    }
+    
 }
 
