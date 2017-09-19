@@ -17,6 +17,8 @@
 		49900DCE1F69578700900B62 /* RecipesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49900DCD1F69578700900B62 /* RecipesCell.swift */; };
 		49900DD01F696EF000900B62 /* RecipesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49900DCF1F696EF000900B62 /* RecipesVC.swift */; };
 		49900DD21F69762900900B62 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49900DD11F69762900900B62 /* Recipe.swift */; };
+		49A408511F71603200C58A52 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A408501F71603200C58A52 /* FloatLabelTextField.swift */; };
+		49A408531F71604E00C58A52 /* FloatLabelTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A408521F71604E00C58A52 /* FloatLabelTextView.swift */; };
 		49D19FA31F62D24D001DE499 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D19FA21F62D24D001DE499 /* AppDelegate.swift */; };
 		49D19FA51F62D24D001DE499 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D19FA41F62D24D001DE499 /* CategoryVC.swift */; };
 		49D19FA81F62D24D001DE499 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D19FA61F62D24D001DE499 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		49900DCD1F69578700900B62 /* RecipesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesCell.swift; sourceTree = "<group>"; };
 		49900DCF1F696EF000900B62 /* RecipesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesVC.swift; sourceTree = "<group>"; };
 		49900DD11F69762900900B62 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		49A408501F71603200C58A52 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
+		49A408521F71604E00C58A52 /* FloatLabelTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextView.swift; sourceTree = "<group>"; };
 		49D19F9F1F62D24D001DE499 /* FoodBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49D19FA21F62D24D001DE499 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49D19FA41F62D24D001DE499 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
@@ -65,10 +69,12 @@
 		490E60311F66ABA100339E7B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				490E60331F66FDA100339E7B /* ShadowText.swift */,
 				490E603B1F67134500339E7B /* CategoryCell.swift */,
 				49900DCD1F69578700900B62 /* RecipesCell.swift */,
 				498AC2F41F6FDCFA0047DB96 /* roundButton.swift */,
+				490E60331F66FDA100339E7B /* ShadowText.swift */,
+				49A408501F71603200C58A52 /* FloatLabelTextField.swift */,
+				49A408521F71604E00C58A52 /* FloatLabelTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -294,11 +300,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				49900DD01F696EF000900B62 /* RecipesVC.swift in Sources */,
+				49A408531F71604E00C58A52 /* FloatLabelTextView.swift in Sources */,
 				49D19FA51F62D24D001DE499 /* CategoryVC.swift in Sources */,
 				490E60341F66FDA100339E7B /* ShadowText.swift in Sources */,
 				49D19FA31F62D24D001DE499 /* AppDelegate.swift in Sources */,
 				498AC2F51F6FDCFA0047DB96 /* roundButton.swift in Sources */,
 				49900DCE1F69578700900B62 /* RecipesCell.swift in Sources */,
+				49A408511F71603200C58A52 /* FloatLabelTextField.swift in Sources */,
 				49D500601F6C09DA0049ECAC /* newRecipeCV.swift in Sources */,
 				490E60371F67092000339E7B /* Category.swift in Sources */,
 				492F05DF1F68223600427BCA /* Constants.swift in Sources */,

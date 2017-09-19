@@ -17,6 +17,4 @@ struct Category {
         self.title = title
         self.imageName = imageName
     }
-    
-    
 }

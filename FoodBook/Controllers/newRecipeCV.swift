@@ -10,15 +10,20 @@ import UIKit
 
 class newRecipeCV: UIViewController {
 
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var ingridientsLbl: UILabel!
     @IBOutlet weak var minuteLbl: UILabel!
+    @IBOutlet weak var informationLbl: UILabel!
+    @IBOutlet weak var instructionsLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let notificationCenter = NotificationCenter.default
     }
 
+    //Changes the label value on how long time the the recipe will take to make
     @IBAction func minuteSliderValueChanged(sender: UISlider) {
-        var value: Int = Int(sender.value)
+        let value: Int = Int(sender.value)
         minuteLbl.text = String("\(value) minuter")
     }
     

@@ -15,7 +15,7 @@ class RecipesCell: UITableViewCell {
     @IBOutlet weak var timeInfoLbl: UILabel!
     @IBOutlet weak var foodImageView: UIImageView!
     
-    
+    // Sets the data on the different labels in a cell
     func configureCell(foodTitle: String, foodInfo: String, timeInfo: Int, foodImage: String){
         self.foodTitleLbl.text = foodTitle
         self.foodInfoLbl.text = foodInfo

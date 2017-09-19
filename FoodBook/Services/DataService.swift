@@ -14,6 +14,7 @@ var categoryTitleSender: String?
 class DataService {
     static let instance = DataService()
     
+    // All the constant categories
     private let Categories = [
         Category(title: "Kött", imageName: "meat.png"),
         Category(title: "Vegetariskt", imageName: "vegetarian.png"),
@@ -24,10 +25,16 @@ class DataService {
         Category(title: "Bröd", imageName: "bread.png")
     ]
     
+    // Grabs the categories
     func getCategories() -> [Category] {
         return Categories
     }
     
+    // Grabs the data from firebase
+    // If something is equal nil, it's using @escaping, which quits the function and prevents crash
+    // The object we're getting from the dataSnapshot is all the data we're getting from that node
+    // We're using a for loop to seperate all the data into different recipes and converts all the different datatypes into our own specific types; etc. String and Int.
+    // We then put every new recipe into our recipeArray
     func getAllRecipes(handler: @escaping (_ recipe: [Recipe]) -> ()) {
         var recipeArray = [Recipe]()
         let titleSender: String = categoryTitleSender!

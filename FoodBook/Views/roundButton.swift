@@ -21,8 +21,9 @@ class roundButton: UIButton {
         customButton()
     }
     
+    // Makes the corner rounder
     func customButton(){
-        layer.cornerRadius = 8
+        layer.cornerRadius = 5
     }
     
 
