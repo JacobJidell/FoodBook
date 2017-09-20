@@ -102,14 +102,14 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="8hJ-QI-Adh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asianfood" translatesAutoresizingMaskIntoConstraints="NO" id="sUH-4j-sKe">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="sUH-4j-sKe">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="AAN-OV-Lrb"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-X3-P4b">
-                                        <rect key="frame" x="10" y="224" width="355" height="655"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-X3-P4b">
+                                        <rect key="frame" x="10" y="224" width="355" height="752"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="odD-VC-jC0" userLabel="ButtonStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
@@ -135,32 +135,39 @@
                                                     <constraint firstAttribute="height" constant="40" id="ZhZ-qg-RSb"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="CpO-kI-XKi">
-                                                <rect key="frame" x="0.0" y="60" width="355" height="595"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CpO-kI-XKi" userLabel="TextInputStackViews">
+                                                <rect key="frame" x="0.0" y="55" width="355" height="434"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S2a-Ke-yY8" customClass="FloatLabelTextField" customModule="FoodBook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0eh-Rc-j0c" customClass="FloatLabelTextView" customModule="FoodBook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="60"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="355" id="Su1-Ih-ph8"/>
-                                                            <constraint firstAttribute="height" constant="40" id="TkW-WU-IJC"/>
+                                                            <constraint firstAttribute="height" constant="60" id="2ja-5J-Yu4"/>
                                                         </constraints>
-                                                        <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="hintYPadding">
-                                                                <real key="value" value="2"/>
-                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="string" keyPath="hint" value="Titel"/>
                                                             <userDefinedRuntimeAttribute type="color" keyPath="titleTextColour">
                                                                 <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
-                                                            <userDefinedRuntimeAttribute type="number" keyPath="titleYPadding">
-                                                                <real key="value" value="0.0"/>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                                <color key="value" red="0.89862043329999997" green="0.32146003839999998" blue="0.18390567599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="8ZZ-Os-fjN" customClass="FloatLabelTextView" customModule="FoodBook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="55" width="355" height="110"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="fer-n4-8jy" id="7jg-TU-9EF"/>
+                                                        </connections>
+                                                    </textView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqP-9Q-QGN">
+                                                        <rect key="frame" x="0.0" y="70" width="355" height="1"/>
+                                                        <color key="backgroundColor" red="0.89923873889999995" green="0.92066124650000003" blue="0.95947017769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="PST-sE-uAM"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ZZ-Os-fjN" customClass="FloatLabelTextView" customModule="FoodBook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="81" width="355" height="110"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="110" id="QEx-cD-YCt"/>
@@ -175,10 +182,26 @@
                                                             <userDefinedRuntimeAttribute type="color" keyPath="titleTextColour">
                                                                 <color key="value" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                                <color key="value" red="0.89862043329999997" green="0.32146003839999998" blue="0.18390567599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="hintXPadding">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="hintColor">
+                                                                <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rla-1j-Op7" customClass="FloatLabelTextView" customModule="FoodBook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="180" width="355" height="70"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3t-Jv-OcD">
+                                                        <rect key="frame" x="0.0" y="201" width="355" height="1"/>
+                                                        <color key="backgroundColor" red="0.89923873889999995" green="0.92066124650000003" blue="0.95947017769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="b1W-ZY-sg5"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rla-1j-Op7" customClass="FloatLabelTextView" customModule="FoodBook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="212" width="355" height="70"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="70" id="zvo-No-aVF"/>
@@ -193,10 +216,20 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="hintYPadding">
                                                                 <real key="value" value="-3"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                                <color key="value" red="0.89862043329999997" green="0.32146003839999998" blue="0.18390567599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vhw-2Y-ZZ6" customClass="FloatLabelTextView" customModule="FoodBook" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="265" width="355" height="120"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aeb-Sz-4bT">
+                                                        <rect key="frame" x="0.0" y="292" width="355" height="1"/>
+                                                        <color key="backgroundColor" red="0.89923873889999995" green="0.92066124650000003" blue="0.95947017769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="RKT-wN-bm3"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vhw-2Y-ZZ6" customClass="FloatLabelTextView" customModule="FoodBook" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="303" width="355" height="120"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="NHx-Dz-vaI"/>
@@ -211,10 +244,31 @@
                                                             <userDefinedRuntimeAttribute type="number" keyPath="hintYPadding">
                                                                 <real key="value" value="-3"/>
                                                             </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="titleActiveTextColour">
+                                                                <color key="value" red="0.89862043329999997" green="0.32146003839999998" blue="0.18390567599999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WEh-Yt-1ry">
+                                                        <rect key="frame" x="0.0" y="433" width="355" height="1"/>
+                                                        <color key="backgroundColor" red="0.89923873889999995" green="0.92066124650000003" blue="0.95947017769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="9k2-tI-eCL"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h9K-xP-6Pf" userLabel="TimeSliderStackView">
+                                                <rect key="frame" x="0.0" y="504" width="355" height="96.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tid" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avd-13-shm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ypf-Se-IQt">
-                                                        <rect key="frame" x="0.0" y="400" width="355" height="80"/>
+                                                        <rect key="frame" x="0.0" y="16.5" width="355" height="80"/>
                                                         <subviews>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="120" minValue="0.0" maxValue="240" translatesAutoresizingMaskIntoConstraints="NO" id="qdN-sU-yBM">
                                                                 <rect key="frame" x="-2" y="0.0" width="239" height="81"/>
@@ -236,31 +290,47 @@
                                                             <constraint firstAttribute="height" constant="80" id="4aI-Jr-5QQ"/>
                                                         </constraints>
                                                     </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="avd-13-shm" firstAttribute="leading" secondItem="h9K-xP-6Pf" secondAttribute="leading" id="GAq-y9-Sjn"/>
+                                                    <constraint firstItem="ypf-Se-IQt" firstAttribute="leading" secondItem="h9K-xP-6Pf" secondAttribute="leading" id="gan-dg-1oU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ypf-Se-IQt" secondAttribute="trailing" id="m4m-wK-cAL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="avd-13-shm" secondAttribute="trailing" id="yRp-93-lOO"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XQt-Q9-ezq" userLabel="CategoryStackView">
+                                                <rect key="frame" x="0.0" y="615.5" width="355" height="136.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kategori" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-lx-HZA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="16.5"/>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orF-bR-fUc">
-                                                        <rect key="frame" x="0.0" y="495" width="355" height="100"/>
+                                                        <rect key="frame" x="0.0" y="16.5" width="355" height="120"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="100" id="LZk-H9-GAw"/>
+                                                            <constraint firstAttribute="height" constant="120" id="LZk-H9-GAw"/>
                                                         </constraints>
                                                     </pickerView>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="S2a-Ke-yY8" secondAttribute="trailing" id="1h9-KD-4R6"/>
-                                                    <constraint firstItem="S2a-Ke-yY8" firstAttribute="trailing" secondItem="CpO-kI-XKi" secondAttribute="trailingMargin" id="3B3-xC-fWM"/>
-                                                    <constraint firstAttribute="trailing" secondItem="S2a-Ke-yY8" secondAttribute="trailing" id="8b9-uj-qLe"/>
-                                                    <constraint firstItem="S2a-Ke-yY8" firstAttribute="leading" secondItem="CpO-kI-XKi" secondAttribute="leadingMargin" id="Bwe-OJ-gP9"/>
-                                                    <constraint firstItem="S2a-Ke-yY8" firstAttribute="leading" secondItem="CpO-kI-XKi" secondAttribute="leading" id="H2x-EM-Vap"/>
-                                                    <constraint firstItem="S2a-Ke-yY8" firstAttribute="leading" secondItem="CpO-kI-XKi" secondAttribute="leading" id="KER-Nf-wRl"/>
-                                                    <constraint firstItem="S2a-Ke-yY8" firstAttribute="centerX" secondItem="CpO-kI-XKi" secondAttribute="centerX" id="NW2-z6-qEb"/>
-                                                    <constraint firstItem="S2a-Ke-yY8" firstAttribute="leading" secondItem="CpO-kI-XKi" secondAttribute="leading" id="OTh-uA-VMm"/>
-                                                    <constraint firstItem="S2a-Ke-yY8" firstAttribute="leading" secondItem="CpO-kI-XKi" secondAttribute="leading" id="kGb-lm-2LU"/>
+                                                    <constraint firstAttribute="trailing" secondItem="orF-bR-fUc" secondAttribute="trailing" id="MXY-WM-KYm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="8o9-lx-HZA" secondAttribute="trailing" id="cGG-hU-I65"/>
+                                                    <constraint firstItem="8o9-lx-HZA" firstAttribute="leading" secondItem="XQt-Q9-ezq" secondAttribute="leading" id="fr4-Mz-xKK"/>
+                                                    <constraint firstItem="orF-bR-fUc" firstAttribute="leading" secondItem="XQt-Q9-ezq" secondAttribute="leading" id="wsH-ns-Rdg"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="odD-VC-jC0" firstAttribute="leading" secondItem="Tdh-X3-P4b" secondAttribute="leading" id="0Q5-UG-8Fi"/>
                                             <constraint firstItem="CpO-kI-XKi" firstAttribute="leading" secondItem="Tdh-X3-P4b" secondAttribute="leading" id="7qm-4D-4g1"/>
+                                            <constraint firstAttribute="trailing" secondItem="XQt-Q9-ezq" secondAttribute="trailing" id="Aa2-5S-bk3"/>
                                             <constraint firstAttribute="trailing" secondItem="odD-VC-jC0" secondAttribute="trailing" id="DSL-d9-6R1"/>
                                             <constraint firstAttribute="trailing" secondItem="CpO-kI-XKi" secondAttribute="trailing" id="Nbi-h4-Y01"/>
+                                            <constraint firstAttribute="trailing" secondItem="h9K-xP-6Pf" secondAttribute="trailing" id="eTe-8U-9dA"/>
+                                            <constraint firstItem="h9K-xP-6Pf" firstAttribute="leading" secondItem="Tdh-X3-P4b" secondAttribute="leading" id="g10-qo-RRH"/>
+                                            <constraint firstItem="XQt-Q9-ezq" firstAttribute="leading" secondItem="Tdh-X3-P4b" secondAttribute="leading" id="gpZ-cM-36Z"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -272,7 +342,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Tdh-X3-P4b" secondAttribute="trailing" constant="10" id="KbP-A8-zmu"/>
                                     <constraint firstItem="sUH-4j-sKe" firstAttribute="centerX" secondItem="8hJ-QI-Adh" secondAttribute="centerX" id="Wqd-nu-XGc"/>
                                     <constraint firstItem="sUH-4j-sKe" firstAttribute="leading" secondItem="8hJ-QI-Adh" secondAttribute="leading" id="Y6B-oG-mPa"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tdh-X3-P4b" secondAttribute="bottom" id="dp5-E9-Tpw"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tdh-X3-P4b" secondAttribute="bottom" constant="30" id="dp5-E9-Tpw"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -290,7 +360,9 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1050"/>
                     <connections>
+                        <outlet property="categoryPicker" destination="orF-bR-fUc" id="85g-iU-prF"/>
                         <outlet property="minuteLbl" destination="Eab-Ed-P8A" id="6nc-7U-Cri"/>
+                        <outlet property="titleLbl" destination="0eh-Rc-j0c" id="06f-6L-D1b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mdu-Du-xbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -418,7 +490,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="asianfood" width="1619" height="1079"/>
+        <image name="defaultImage" width="1920" height="1271"/>
         <image name="meat" width="1920" height="1183"/>
         <image name="pasta" width="1619" height="1183"/>
         <image name="time" width="256" height="256"/>

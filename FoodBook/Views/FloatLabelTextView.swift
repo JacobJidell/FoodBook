@@ -77,6 +77,8 @@ import UIKit
         }
     }
     
+
+    
     // MARK:- Init
     required init?(coder aDecoder:NSCoder) {
         super.init(coder:aDecoder)
@@ -137,7 +139,7 @@ import UIKit
         hintLabel.numberOfLines = 0
         hintLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         hintLabel.backgroundColor = UIColor.clear
-        hintLabel.textColor = placeholderTextColor
+        hintLabel.textColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
         insertSubview(hintLabel, at:0)
         // Set up title label
         title.alpha = 0.0
