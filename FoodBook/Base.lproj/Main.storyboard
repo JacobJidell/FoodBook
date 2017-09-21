@@ -356,12 +356,20 @@
                         <viewLayoutGuide key="safeArea" id="7iP-2u-AQW"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nytt recept" id="7MP-2x-Vjb">
-                        <barButtonItem key="rightBarButtonItem" title="Spara" id="MIU-vn-n75"/>
+                        <barButtonItem key="rightBarButtonItem" title="Spara" id="MIU-vn-n75">
+                            <connections>
+                                <action selector="saveBtnPressed:" destination="fer-n4-8jy" id="Izp-zf-J4w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1050"/>
                     <connections>
                         <outlet property="categoryPicker" destination="orF-bR-fUc" id="85g-iU-prF"/>
+                        <outlet property="informationLbl" destination="Rla-1j-Op7" id="ysX-Zt-7HM"/>
+                        <outlet property="ingredientsLbl" destination="8ZZ-Os-fjN" id="41G-us-AZf"/>
+                        <outlet property="instructionLbl" destination="vhw-2Y-ZZ6" id="GLA-MG-YgN"/>
                         <outlet property="minuteLbl" destination="Eab-Ed-P8A" id="6nc-7U-Cri"/>
+                        <outlet property="timeSlider" destination="qdN-sU-yBM" id="QVj-Im-3uw"/>
                         <outlet property="titleLbl" destination="0eh-Rc-j0c" id="06f-6L-D1b"/>
                     </connections>
                 </viewController>

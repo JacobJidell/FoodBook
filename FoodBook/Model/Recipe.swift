@@ -16,6 +16,7 @@ struct Recipe {
     private var _recipeInformation: String
     private var _ingredients: String
     private var _instructions: String
+    private var _category: String
     
     var recipeName: String {
         return _recipeName
@@ -41,15 +42,19 @@ struct Recipe {
         return _instructions
     }
     
+    var category: String {
+        return _category
+    }
     
     init(recipeName: String, recipeImageName: String, recipeTime: Int, recipeInformation: String,
-        ingredients: String, instructions: String) {
+         ingredients: String, instructions: String, category: String) {
         self._recipeName = recipeName
         self._recipeImageName = recipeImageName
         self._recipeTime = recipeTime
         self._recipeInformation = recipeInformation
         self._ingredients = ingredients
         self._instructions = instructions
+        self._category = category
     }
     
     

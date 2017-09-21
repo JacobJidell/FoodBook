@@ -36,8 +36,10 @@ class RecipesVC: UIViewController{
         categoryTitleSender = category.title
         categoryTitleLbl.title = category.title
     }
-    
-    
+  
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        
+    }
 }
 
 extension RecipesVC: UITableViewDelegate, UITableViewDataSource {

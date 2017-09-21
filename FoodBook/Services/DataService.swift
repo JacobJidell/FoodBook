@@ -14,7 +14,7 @@ var categoryTitleSender: String?
 class DataService {
     static let instance = DataService()
     
-    // All the constant categories
+    // All the categories
     private let Categories = [
         Category(title: "Kött", imageName: "meat.png"),
         Category(title: "Vegetariskt", imageName: "vegetarian.png"),
@@ -48,11 +48,31 @@ class DataService {
                 let recipeInfo = recipe.childSnapshot(forPath: "Information").value as! String
                 let recipeInstructions = recipe.childSnapshot(forPath: "Instruction").value as! String
                 let recipeIngredients = recipe.childSnapshot(forPath: "Ingredients").value as! String
-                let recipe = Recipe(recipeName: recipeName, recipeImageName: recipeImageName, recipeTime: recipeTime, recipeInformation: recipeInfo, ingredients: recipeIngredients, instructions: recipeInstructions)
+                let recipeCategory = recipe.childSnapshot(forPath: "Category").value as! String
+                let recipe = Recipe(recipeName: recipeName, recipeImageName: recipeImageName, recipeTime: recipeTime, recipeInformation: recipeInfo, ingredients: recipeIngredients, instructions: recipeInstructions, category: recipeCategory)
                 recipeArray.append(recipe)
             }
             handler(recipeArray)
         }
     }
+    
+    // Saves data to firebase
+    func upLoadNewRecipe(recipe: Recipe) {
+        let recipeArray: [String: Any] = [
+            "Category": recipe.category,
+            "ImageName": "defaultImage.png",
+            "Information": recipe.recipeInformation,
+            "Ingredients": recipe.ingredients,
+            "Instruction": recipe.instructions,
+            "Name": recipe.recipeName,
+            "Time": recipe.recipeTime
+        ]
+        
+        let category = recipe.category
+        REF_CATEGORIES.child(category).childByAutoId().setValue(recipeArray)
+    }
+    
+    
+    
 }
 

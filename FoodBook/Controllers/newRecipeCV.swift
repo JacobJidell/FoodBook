@@ -10,9 +10,15 @@ import UIKit
 
 class newRecipeCV: UIViewController, UITextViewDelegate {
 
-    @IBOutlet weak var titleLbl: FloatLabelTextView!
     @IBOutlet weak var minuteLbl: UILabel!
     @IBOutlet weak var categoryPicker: UIPickerView!
+    @IBOutlet weak var titleLbl: FloatLabelTextView!
+    @IBOutlet weak var ingredientsLbl: FloatLabelTextView!
+    @IBOutlet weak var informationLbl: FloatLabelTextView!
+    @IBOutlet weak var instructionLbl: FloatLabelTextView!
+    @IBOutlet weak var timeSlider: UISlider!
+    
+    var pickerValue: String = String(DataService.instance.getCategories()[0].title)
     
     
     override func viewDidLoad() {
@@ -34,6 +40,19 @@ class newRecipeCV: UIViewController, UITextViewDelegate {
         let numberOfChars = newText.characters.count // for Swift use count(newText)
         return numberOfChars <= 40
     }
+    
+    @IBAction func saveBtnPressed(_ sender: Any) {
+        let titleName = titleLbl.text
+        let time = Int(timeSlider.value)
+        let information = informationLbl.text
+        let ingredients = ingredientsLbl.text
+        let instructions = instructionLbl.text
+        let category = pickerValue
+        
+        let saveRecipe: Recipe = Recipe(recipeName: titleName!, recipeImageName: "pasta.png", recipeTime: time, recipeInformation: information!, ingredients: ingredients!, instructions: instructions!, category: category)
+        DataService.instance.upLoadNewRecipe(recipe: saveRecipe)
+    }
+    
 }
 
 extension newRecipeCV: UIPickerViewDelegate, UIPickerViewDataSource {
@@ -51,8 +70,7 @@ extension newRecipeCV: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let categoryChoice = DataService.instance.getCategories()[row].title
-        print(categoryChoice)
+        pickerValue = String(DataService.instance.getCategories()[row].title)
     }
     
 }
