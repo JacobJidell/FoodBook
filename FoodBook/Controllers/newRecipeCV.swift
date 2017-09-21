@@ -41,20 +41,48 @@ class newRecipeCV: UIViewController, UITextViewDelegate {
         return numberOfChars <= 40
     }
     
+    // Saves data to firebase and alerts the user with a message
     @IBAction func saveBtnPressed(_ sender: Any) {
-        let titleName = titleLbl.text
-        let time = Int(timeSlider.value)
-        let information = informationLbl.text
-        let ingredients = ingredientsLbl.text
-        let instructions = instructionLbl.text
-        let category = pickerValue
         
-        let saveRecipe: Recipe = Recipe(recipeName: titleName!, recipeImageName: "pasta.png", recipeTime: time, recipeInformation: information!, ingredients: ingredients!, instructions: instructions!, category: category)
+        let time = Int(timeSlider.value)
+        let category = pickerValue
+        let information = informationLbl.text ?? ""
+        guard let titleName = titleLbl.text, !titleName.isEmpty else {
+            alertWindow(title: "Opps!", message: "Du måste fylla i titel", buttonMessage: "Okej, jag fixar det!")
+            return
+        }
+        guard let ingredients = ingredientsLbl.text, !ingredients.isEmpty else {
+            alertWindow(title: "Opps!", message: "Du måste fylla i ingredienser!", buttonMessage: "Okej, jag fixar det!")
+            return
+        }
+        guard let instructions = instructionLbl.text, !instructions.isEmpty else {
+            alertWindow(title: "Opps!", message: "Du måste fylla i utförande!", buttonMessage: "Okej, jag fixar det!")
+            return
+        }
+        
+        let saveRecipe: Recipe = Recipe(recipeName: titleName, recipeImageName: "pasta.png", recipeTime: time, recipeInformation: information, ingredients: ingredients, instructions: instructions, category: category)
         DataService.instance.upLoadNewRecipe(recipe: saveRecipe)
+        alertWindow(title: "Nytt Recept", message: "Nytt recept har lagts till!", buttonMessage: "Schysst!")
+        
+    }
+    
+    @IBAction func takePhotoBtnPressed(_ sender: Any) {
+        
+    }
+    
+    @IBAction func photoLibraryBtnPressed(_ sender: Any) {
+        
+    }
+    
+    func alertWindow(title: String, message: String, buttonMessage: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: buttonMessage, style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
 }
 
+// Picker
 extension newRecipeCV: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -72,5 +100,21 @@ extension newRecipeCV: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerValue = String(DataService.instance.getCategories()[row].title)
     }
+}
+
+// Camera
+extension newRecipeCV: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    
     
 }
+
+
+
+
+
+
+
+
+
+
+

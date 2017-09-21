@@ -121,6 +121,9 @@
                                                         <state key="normal" title="Kamera">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="takePhotoBtnPressed:" destination="fer-n4-8jy" eventType="touchUpInside" id="wfH-3J-Ul7"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4N-YI-Ani" customClass="roundButton" customModule="FoodBook" customModuleProvider="target">
                                                         <rect key="frame" x="182.5" y="0.0" width="172.5" height="40"/>
@@ -129,6 +132,9 @@
                                                         <state key="normal" title="Bibliotek">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="photoLibraryBtnPressed:" destination="fer-n4-8jy" eventType="touchUpInside" id="WDh-GR-HgQ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>

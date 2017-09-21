@@ -10,11 +10,14 @@ import Foundation
 import FirebaseAuth
 import Firebase
 
-//Database reference
+// Database reference
 public let REF = Database.database().reference()
 public let REF_USER = REF.child(USER_ID!)
 public let REF_CATEGORIES = REF_USER.child("categories")
 
-//Authenication, User ID
+// Authenication, User ID
 public let USER_ID = Auth.auth().currentUser?.uid
 
+// Firebase storage
+public let STORAGE = Storage.storage()
+public let STORAGE_REF = Storage.storage().reference()
