@@ -36,10 +36,16 @@ class RecipesVC: UIViewController{
         categoryTitleSender = category.title
         categoryTitleLbl.title = category.title
     }
-  
-    @IBAction func saveBtnPressed(_ sender: Any) {
-        
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chosenRecipe: Recipe = recipesArray[indexPath.row]
+        performSegue(withIdentifier: "chosenRecipeVCx", sender: chosenRecipe)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    }
+
 }
 
 extension RecipesVC: UITableViewDelegate, UITableViewDataSource {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class newRecipeCV: UIViewController, UITextViewDelegate {
+class NewRecipeVC: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var minuteLbl: UILabel!
     @IBOutlet weak var categoryPicker: UIPickerView!
@@ -19,6 +19,7 @@ class newRecipeCV: UIViewController, UITextViewDelegate {
     @IBOutlet weak var timeSlider: UISlider!
     
     var pickerValue: String = String(DataService.instance.getCategories()[0].title)
+    var picker: UIImagePickerController? = UIImagePickerController()
     
     
     override func viewDidLoad() {
@@ -41,7 +42,7 @@ class newRecipeCV: UIViewController, UITextViewDelegate {
         return numberOfChars <= 40
     }
     
-    // Saves data to firebase and alerts the user with a message
+    // Saves data to firebase and alerts the user with an alert message
     @IBAction func saveBtnPressed(_ sender: Any) {
         
         let time = Int(timeSlider.value)
@@ -66,14 +67,7 @@ class newRecipeCV: UIViewController, UITextViewDelegate {
         
     }
     
-    @IBAction func takePhotoBtnPressed(_ sender: Any) {
-        
-    }
-    
-    @IBAction func photoLibraryBtnPressed(_ sender: Any) {
-        
-    }
-    
+    // Alert function
     func alertWindow(title: String, message: String, buttonMessage: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: buttonMessage, style: UIAlertActionStyle.default,handler: nil))
@@ -83,29 +77,40 @@ class newRecipeCV: UIViewController, UITextViewDelegate {
 }
 
 // Picker
-extension newRecipeCV: UIPickerViewDelegate, UIPickerViewDataSource {
+extension NewRecipeVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
+    // Shows the number of rows in the picker
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return DataService.instance.getCategories().count
     }
     
+    // Shows the title for the corresponding row
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return DataService.instance.getCategories()[row].title
     }
     
+    // Sets the pickerValue as the current active value in the picker
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerValue = String(DataService.instance.getCategories()[row].title)
     }
 }
 
 // Camera
-extension newRecipeCV: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+extension NewRecipeVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    @IBAction func takePhotoBtnPressed(_ sender: Any) {
+        picker?.delegate = self
+        picker?.sourceType = .camera
+        present(picker!, animated: true, completion: nil)
+    }
     
+    @IBAction func photoLibraryBtnPressed(_ sender: Any) {
+        
+    }
 }
 
 

@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
         </scene>
-        <!--Nytt recept-->
+        <!--newRecipe-->
         <scene sceneID="t94-Ma-cj2">
             <objects>
-                <viewController id="fer-n4-8jy" customClass="newRecipeCV" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fer-n4-8jy" userLabel="newRecipe" customClass="NewRecipeVC" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5B-ye-rLH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -477,11 +477,47 @@
                     <connections>
                         <outlet property="categoryTitleLbl" destination="fAC-wy-4Ms" id="Ic8-kb-4mJ"/>
                         <outlet property="recipeTable" destination="XuZ-kw-cbL" id="9vd-nl-HMg"/>
+                        <segue destination="ZZR-J4-eTZ" kind="show" identifier="chosenRecipeVC" id="Hc9-3p-Tcc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-iT-TL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1268" y="672"/>
+        </scene>
+        <!--chosenRecipe-->
+        <scene sceneID="vFK-NI-v89">
+            <objects>
+                <viewController id="ZZR-J4-eTZ" userLabel="chosenRecipe" customClass="ActiveRecipeVC" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="loa-CL-Tom">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asianfood" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-SP-vXG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="aGl-Vx-xeD"/>
+                                </constraints>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-Zh-NkS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="HJEHJE" id="0hm-Y7-f92"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tg9-SP-vXG" firstAttribute="top" secondItem="2UT-eE-vr3" secondAttribute="top" id="597-50-6zY"/>
+                            <constraint firstItem="Tg9-SP-vXG" firstAttribute="trailing" secondItem="2UT-eE-vr3" secondAttribute="trailing" id="Stm-uN-XX1"/>
+                            <constraint firstItem="Tg9-SP-vXG" firstAttribute="leading" secondItem="2UT-eE-vr3" secondAttribute="leading" id="xzL-q0-EL0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2UT-eE-vr3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NXu-9r-IWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2005.5999999999999" y="671.51424287856082"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fFF-WG-mj7">
@@ -504,6 +540,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="asianfood" width="1619" height="1079"/>
         <image name="defaultImage" width="1920" height="1271"/>
         <image name="meat" width="1920" height="1183"/>
         <image name="pasta" width="1619" height="1183"/>
