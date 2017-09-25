@@ -10,12 +10,19 @@ import UIKit
 
 class ActiveRecipeVC: UIViewController {
 
+    @IBOutlet weak var titleLbl: UINavigationItem!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var instructionLbl: UILabel!
+    @IBOutlet weak var ingredientsLbl: UILabel!
+    
+    var activeRecipe: Recipe!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleLbl.title = activeRecipe.recipeName
+        timeLbl.text = "\(activeRecipe.recipeTime) minuter"
+        instructionLbl.text =  activeRecipe.instructions
+        ingredientsLbl.text = activeRecipe.ingredients
     }
-
-    
 
 }

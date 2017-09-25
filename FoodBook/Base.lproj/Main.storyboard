@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -102,14 +103,14 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="8hJ-QI-Adh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1050"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="sUH-4j-sKe">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="sUH-4j-sKe">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="255"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="AAN-OV-Lrb"/>
+                                            <constraint firstAttribute="width" secondItem="sUH-4j-sKe" secondAttribute="height" multiplier="25:17" id="kZv-vV-3BN"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Tdh-X3-P4b">
-                                        <rect key="frame" x="10" y="224" width="355" height="752"/>
+                                        <rect key="frame" x="10" y="280" width="355" height="752"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="odD-VC-jC0" userLabel="ButtonStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="40"/>
@@ -341,7 +342,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Tdh-X3-P4b" firstAttribute="top" secondItem="sUH-4j-sKe" secondAttribute="bottom" constant="24" id="07B-Ov-oeL"/>
+                                    <constraint firstItem="Tdh-X3-P4b" firstAttribute="top" secondItem="sUH-4j-sKe" secondAttribute="bottom" constant="25" id="07B-Ov-oeL"/>
                                     <constraint firstItem="Tdh-X3-P4b" firstAttribute="leading" secondItem="8hJ-QI-Adh" secondAttribute="leading" constant="10" id="7FW-ep-vbq"/>
                                     <constraint firstItem="sUH-4j-sKe" firstAttribute="top" secondItem="8hJ-QI-Adh" secondAttribute="top" id="GAA-bu-wcu"/>
                                     <constraint firstAttribute="trailing" secondItem="sUH-4j-sKe" secondAttribute="trailing" id="IZC-Ru-hSN"/>
@@ -375,6 +376,7 @@
                         <outlet property="ingredientsLbl" destination="8ZZ-Os-fjN" id="41G-us-AZf"/>
                         <outlet property="instructionLbl" destination="vhw-2Y-ZZ6" id="GLA-MG-YgN"/>
                         <outlet property="minuteLbl" destination="Eab-Ed-P8A" id="6nc-7U-Cri"/>
+                        <outlet property="recipeImageView" destination="sUH-4j-sKe" id="fud-1j-NGC"/>
                         <outlet property="timeSlider" destination="qdN-sU-yBM" id="QVj-Im-3uw"/>
                         <outlet property="titleLbl" destination="0eh-Rc-j0c" id="06f-6L-D1b"/>
                     </connections>
@@ -477,47 +479,131 @@
                     <connections>
                         <outlet property="categoryTitleLbl" destination="fAC-wy-4Ms" id="Ic8-kb-4mJ"/>
                         <outlet property="recipeTable" destination="XuZ-kw-cbL" id="9vd-nl-HMg"/>
-                        <segue destination="ZZR-J4-eTZ" kind="show" identifier="chosenRecipeVC" id="Hc9-3p-Tcc"/>
+                        <segue destination="hqs-8H-d3B" kind="show" identifier="chosenRecipeVC" id="Otb-KV-v4a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-iT-TL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1268" y="672"/>
         </scene>
-        <!--chosenRecipe-->
-        <scene sceneID="vFK-NI-v89">
+        <!--Title-->
+        <scene sceneID="Yfy-Kr-8JL">
             <objects>
-                <viewController id="ZZR-J4-eTZ" userLabel="chosenRecipe" customClass="ActiveRecipeVC" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="loa-CL-Tom">
+                <viewController id="hqs-8H-d3B" customClass="ActiveRecipeVC" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Az2-iE-gnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asianfood" translatesAutoresizingMaskIntoConstraints="NO" id="Tg9-SP-vXG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="200"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eUt-8x-vqV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-fC-4MJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="379" height="667.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGREDIENSER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-XY-GS3">
+                                                <rect key="frame" x="15" y="287.5" width="123" height="24"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 minuter" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rth-RT-oes">
+                                                <rect key="frame" x="279.5" y="272.5" width="84.5" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="jLH-u2-bS7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GÖR SÅ HÄR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQl-jj-lAe">
+                                                <rect key="frame" x="15" y="484" width="103" height="24"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5C-hT-Wcw">
+                                                <rect key="frame" x="25" y="319.5" width="329" height="139.5"/>
+                                                <string key="text">300gr spaghetti                                             150gr rökt fläsk                                        0,5dl vispgrädde                                                1 finhackad vitläksklyfta                                     3dl riven gratängost                                     Smör, salt och peppar</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="i56-Qi-bW2">
+                                                <rect key="frame" x="0.0" y="0.0" width="379" height="257.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="i56-Qi-bW2" secondAttribute="height" multiplier="25:17" id="7Wh-74-Vce"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhy-2p-stv">
+                                                <rect key="frame" x="20" y="516" width="339" height="143.5"/>
+                                                <string key="text">Koka spaghettin. Skär fläsket i små tärningar. Stek fläsket knaprigt i smör i en stekpanna. Vispa ihop grädde, salt, vitlök och hälften av osten. Rör ner fläsk och ostblandningen i den kokta spaghettin och rör kraftigt till en krämig konsistens. Strö över resten av osten och peppar. Servera pastan med äggula.</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="GgL-Yu-z2y">
+                                                <rect key="frame" x="239.5" y="267.5" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="4zG-7t-pek"/>
+                                                    <constraint firstAttribute="height" constant="30" id="sei-39-qlL"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.89923873889999995" green="0.92066124650000003" blue="0.95947017769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Rth-RT-oes" secondAttribute="trailing" constant="15" id="0fW-ai-3uH"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A8E-XY-GS3" secondAttribute="trailing" constant="20" symbolic="YES" id="1TE-1V-sfY"/>
+                                            <constraint firstAttribute="bottom" secondItem="xhy-2p-stv" secondAttribute="bottom" constant="8" id="49T-LL-m7T"/>
+                                            <constraint firstItem="IQl-jj-lAe" firstAttribute="leading" secondItem="xdC-fC-4MJ" secondAttribute="leading" constant="15" id="7X9-Lg-eb2"/>
+                                            <constraint firstItem="L5C-hT-Wcw" firstAttribute="leading" secondItem="xdC-fC-4MJ" secondAttribute="leading" constant="25" id="BvT-8d-P4Q"/>
+                                            <constraint firstAttribute="trailing" secondItem="i56-Qi-bW2" secondAttribute="trailing" id="GyT-fY-lka"/>
+                                            <constraint firstItem="Rth-RT-oes" firstAttribute="top" secondItem="i56-Qi-bW2" secondAttribute="bottom" constant="15" id="HjU-tC-J0c"/>
+                                            <constraint firstItem="Rth-RT-oes" firstAttribute="leading" secondItem="GgL-Yu-z2y" secondAttribute="trailing" constant="10" id="Jvk-2G-zsy"/>
+                                            <constraint firstItem="L5C-hT-Wcw" firstAttribute="top" secondItem="A8E-XY-GS3" secondAttribute="bottom" constant="8" id="Q4Z-3l-cUL"/>
+                                            <constraint firstItem="A8E-XY-GS3" firstAttribute="top" secondItem="i56-Qi-bW2" secondAttribute="bottom" constant="30" id="VDS-OY-mwr"/>
+                                            <constraint firstItem="A8E-XY-GS3" firstAttribute="leading" secondItem="xdC-fC-4MJ" secondAttribute="leading" constant="15" id="WyD-lZ-uLV"/>
+                                            <constraint firstItem="i56-Qi-bW2" firstAttribute="leading" secondItem="xdC-fC-4MJ" secondAttribute="leading" id="ZJS-Oy-rMX"/>
+                                            <constraint firstAttribute="trailing" secondItem="xhy-2p-stv" secondAttribute="trailing" constant="20" id="bzu-6U-5Fs"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IQl-jj-lAe" secondAttribute="trailing" constant="20" symbolic="YES" id="fqp-Ub-M8E"/>
+                                            <constraint firstItem="IQl-jj-lAe" firstAttribute="top" secondItem="L5C-hT-Wcw" secondAttribute="bottom" constant="25" id="grg-PR-qgY"/>
+                                            <constraint firstAttribute="trailing" secondItem="L5C-hT-Wcw" secondAttribute="trailing" constant="25" id="gyQ-ZK-q2B"/>
+                                            <constraint firstItem="xhy-2p-stv" firstAttribute="top" secondItem="IQl-jj-lAe" secondAttribute="bottom" constant="8" id="kA9-mB-OLE"/>
+                                            <constraint firstAttribute="width" constant="379" id="ldu-DX-gP6"/>
+                                            <constraint firstItem="i56-Qi-bW2" firstAttribute="top" secondItem="xdC-fC-4MJ" secondAttribute="top" id="noQ-cA-4X0"/>
+                                            <constraint firstItem="xhy-2p-stv" firstAttribute="leading" secondItem="xdC-fC-4MJ" secondAttribute="leading" constant="20" id="rXQ-kP-NAP"/>
+                                            <constraint firstItem="GgL-Yu-z2y" firstAttribute="centerY" secondItem="Rth-RT-oes" secondAttribute="centerY" id="sHs-S0-jgZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="aGl-Vx-xeD"/>
+                                    <constraint firstAttribute="bottom" secondItem="xdC-fC-4MJ" secondAttribute="bottom" id="K7S-WL-7UQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="xdC-fC-4MJ" secondAttribute="trailing" constant="-4" id="U4s-Ke-3FF"/>
+                                    <constraint firstItem="xdC-fC-4MJ" firstAttribute="leading" secondItem="eUt-8x-vqV" secondAttribute="leading" id="af0-TU-iRj"/>
+                                    <constraint firstItem="xdC-fC-4MJ" firstAttribute="top" secondItem="eUt-8x-vqV" secondAttribute="top" id="tAN-5u-Fvc"/>
                                 </constraints>
-                            </imageView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-Zh-NkS">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="HJEHJE" id="0hm-Y7-f92"/>
-                                </items>
-                            </navigationBar>
+                            </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.89923873889999995" green="0.92066124650000003" blue="0.95947017769999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Tg9-SP-vXG" firstAttribute="top" secondItem="2UT-eE-vr3" secondAttribute="top" id="597-50-6zY"/>
-                            <constraint firstItem="Tg9-SP-vXG" firstAttribute="trailing" secondItem="2UT-eE-vr3" secondAttribute="trailing" id="Stm-uN-XX1"/>
-                            <constraint firstItem="Tg9-SP-vXG" firstAttribute="leading" secondItem="2UT-eE-vr3" secondAttribute="leading" id="xzL-q0-EL0"/>
+                            <constraint firstAttribute="bottom" secondItem="eUt-8x-vqV" secondAttribute="bottom" id="0zE-IX-0mc"/>
+                            <constraint firstAttribute="trailing" secondItem="eUt-8x-vqV" secondAttribute="trailing" id="7KT-LP-wvF"/>
+                            <constraint firstItem="eUt-8x-vqV" firstAttribute="leading" secondItem="Az2-iE-gnc" secondAttribute="leading" id="M20-xl-zJu"/>
+                            <constraint firstItem="eUt-8x-vqV" firstAttribute="top" secondItem="Az2-iE-gnc" secondAttribute="top" id="uSZ-CE-IXQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="2UT-eE-vr3"/>
+                        <viewLayoutGuide key="safeArea" id="Lgw-rA-onf"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="nyp-NS-AIC"/>
+                    <connections>
+                        <outlet property="ingredientsLbl" destination="L5C-hT-Wcw" id="FAM-aA-Mbd"/>
+                        <outlet property="instructionLbl" destination="xhy-2p-stv" id="vrv-1B-iIi"/>
+                        <outlet property="timeLbl" destination="Rth-RT-oes" id="Ra1-WX-mt6"/>
+                        <outlet property="titleLbl" destination="nyp-NS-AIC" id="Mu5-1k-npA"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NXu-9r-IWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uI4-01-zKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2005.5999999999999" y="671.51424287856082"/>
+            <point key="canvasLocation" x="2071" y="672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fFF-WG-mj7">
@@ -540,7 +626,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="asianfood" width="1619" height="1079"/>
         <image name="defaultImage" width="1920" height="1271"/>
         <image name="meat" width="1920" height="1183"/>
         <image name="pasta" width="1619" height="1183"/>

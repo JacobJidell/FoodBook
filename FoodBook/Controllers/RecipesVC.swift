@@ -39,18 +39,20 @@ class RecipesVC: UIViewController{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chosenRecipe: Recipe = recipesArray[indexPath.row]
-        performSegue(withIdentifier: "chosenRecipeVCx", sender: chosenRecipe)
+        performSegue(withIdentifier: "chosenRecipeVC", sender: chosenRecipe)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        if let activeRecipeVC = segue.destination as? ActiveRecipeVC {
+            activeRecipeVC.activeRecipe = sender as? Recipe
+        }
     }
 
 }
 
 extension RecipesVC: UITableViewDelegate, UITableViewDataSource {
     
-    // Using 1 section
+    // Using one section
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }

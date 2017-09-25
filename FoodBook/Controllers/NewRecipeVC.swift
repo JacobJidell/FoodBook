@@ -17,6 +17,7 @@ class NewRecipeVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var informationLbl: FloatLabelTextView!
     @IBOutlet weak var instructionLbl: FloatLabelTextView!
     @IBOutlet weak var timeSlider: UISlider!
+    @IBOutlet weak var recipeImageView: UIImageView!
     
     var pickerValue: String = String(DataService.instance.getCategories()[0].title)
     var picker: UIImagePickerController? = UIImagePickerController()
@@ -106,6 +107,11 @@ extension NewRecipeVC: UINavigationControllerDelegate, UIImagePickerControllerDe
         picker?.delegate = self
         picker?.sourceType = .camera
         present(picker!, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        recipeImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
     
     @IBAction func photoLibraryBtnPressed(_ sender: Any) {

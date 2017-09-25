@@ -82,8 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				49D19FA41F62D24D001DE499 /* CategoryVC.swift */,
-				49900DCF1F696EF000900B62 /* RecipesVC.swift */,
 				49D5005F1F6C09DA0049ECAC /* NewRecipeVC.swift */,
+				49900DCF1F696EF000900B62 /* RecipesVC.swift */,
 				495E44CD1F745341000A7630 /* ActiveRecipeVC.swift */,
 			);
 			path = Controllers;
