@@ -11,19 +11,16 @@ import Foundation
 struct Recipe {
     
     private var _recipeName: String
-    private var _recipeImageName: String
     private var _recipeTime: Int
     private var _recipeInformation: String
     private var _ingredients: String
     private var _instructions: String
     private var _category: String
+    private var _imageURL: String
+    private var _key: String
     
     var recipeName: String {
         return _recipeName
-    }
-    
-    var recipeImageName: String {
-        return _recipeImageName
     }
     
     var recipeTime: Int {
@@ -46,15 +43,24 @@ struct Recipe {
         return _category
     }
     
-    init(recipeName: String, recipeImageName: String, recipeTime: Int, recipeInformation: String,
-         ingredients: String, instructions: String, category: String) {
+    var imageURL: String {
+        return _imageURL
+    }
+    
+    var key: String {
+        return _key
+    }
+    
+    init(recipeName: String, recipeTime: Int, recipeInformation: String,
+         ingredients: String, instructions: String, category: String, imageURL: String, key: String) {
         self._recipeName = recipeName
-        self._recipeImageName = recipeImageName
         self._recipeTime = recipeTime
         self._recipeInformation = recipeInformation
         self._ingredients = ingredients
         self._instructions = instructions
         self._category = category
+        self._imageURL = imageURL
+        self._key = key
     }
     
     

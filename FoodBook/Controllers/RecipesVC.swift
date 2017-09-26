@@ -70,7 +70,7 @@ extension RecipesVC: UITableViewDelegate, UITableViewDataSource {
         let recipe = recipesArray[indexPath.row]
         
         cell.configureCell(foodTitle: recipe.recipeName, foodInfo: recipe.recipeInformation,
-                           timeInfo: recipe.recipeTime, foodImage: recipe.recipeImageName)
+                           timeInfo: recipe.recipeTime, imageKey: recipe.key)
         return cell
     }
 }

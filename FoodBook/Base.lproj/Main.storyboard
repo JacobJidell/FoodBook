@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="476" y="133.5832083958021"/>
+            <point key="canvasLocation" x="505" y="134"/>
         </scene>
         <!--newRecipe-->
         <scene sceneID="t94-Ma-cj2">
@@ -286,7 +286,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 minuter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eab-Ed-P8A">
                                                                 <rect key="frame" x="245" y="0.0" width="110" height="80"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="110" id="mLX-nd-QmM"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="110" id="mLX-nd-QmM"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -383,7 +383,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mdu-Du-xbr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="-278"/>
+            <point key="canvasLocation" x="1289" y="-254"/>
         </scene>
         <!--Recipes-->
         <scene sceneID="YTq-yD-P8y">
@@ -417,7 +417,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pasta" translatesAutoresizingMaskIntoConstraints="NO" id="9Sy-Nq-LY0">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="9Sy-Nq-LY0">
                                                     <rect key="frame" x="8" y="28" width="171" height="141"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="141" id="4rs-Zj-ovS"/>
@@ -484,12 +484,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbe-iT-TL5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="672"/>
+            <point key="canvasLocation" x="1289" y="627"/>
         </scene>
-        <!--Title-->
+        <!--ActiveRecipe-->
         <scene sceneID="Yfy-Kr-8JL">
             <objects>
-                <viewController id="hqs-8H-d3B" customClass="ActiveRecipeVC" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hqs-8H-d3B" userLabel="ActiveRecipe" customClass="ActiveRecipeVC" customModule="FoodBook" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Az2-iE-gnc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -595,6 +595,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="nyp-NS-AIC"/>
                     <connections>
+                        <outlet property="imageView" destination="i56-Qi-bW2" id="Ank-ct-ASj"/>
                         <outlet property="ingredientsLbl" destination="L5C-hT-Wcw" id="FAM-aA-Mbd"/>
                         <outlet property="instructionLbl" destination="xhy-2p-stv" id="vrv-1B-iIi"/>
                         <outlet property="timeLbl" destination="Rth-RT-oes" id="Ra1-WX-mt6"/>
@@ -603,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uI4-01-zKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2071" y="672"/>
+            <point key="canvasLocation" x="2014" y="627"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fFF-WG-mj7">
@@ -628,7 +629,6 @@
     <resources>
         <image name="defaultImage" width="1920" height="1271"/>
         <image name="meat" width="1920" height="1183"/>
-        <image name="pasta" width="1619" height="1183"/>
         <image name="time" width="256" height="256"/>
     </resources>
 </document>

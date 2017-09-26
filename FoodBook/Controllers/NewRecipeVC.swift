@@ -45,7 +45,7 @@ class NewRecipeVC: UIViewController, UITextViewDelegate {
     
     // Saves data to firebase and alerts the user with an alert message
     @IBAction func saveBtnPressed(_ sender: Any) {
-        
+        let newImage: UIImage = recipeImageView.image!
         let time = Int(timeSlider.value)
         let category = pickerValue
         let information = informationLbl.text ?? ""
@@ -62,8 +62,9 @@ class NewRecipeVC: UIViewController, UITextViewDelegate {
             return
         }
         
-        let saveRecipe: Recipe = Recipe(recipeName: titleName, recipeImageName: "pasta.png", recipeTime: time, recipeInformation: information, ingredients: ingredients, instructions: instructions, category: category)
-        DataService.instance.upLoadNewRecipe(recipe: saveRecipe)
+        let saveRecipe: Recipe = Recipe(recipeName: titleName, recipeTime: time, recipeInformation: information, ingredients: ingredients, instructions: instructions, category: category, imageURL: "", key: "")
+        
+        DataService.instance.upLoadNewRecipe(recipe: saveRecipe, image: newImage)
         alertWindow(title: "Nytt Recept", message: "Nytt recept har lagts till!", buttonMessage: "Schysst!")
         
     }
@@ -100,32 +101,28 @@ extension NewRecipeVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 }
 
-// Camera
+// Camera and library extension
 extension NewRecipeVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
+    // Activates camera when camera is pressed
     @IBAction func takePhotoBtnPressed(_ sender: Any) {
         picker?.delegate = self
         picker?.sourceType = .camera
         present(picker!, animated: true, completion: nil)
     }
     
+    // Activates library when "library" is pressed
+    @IBAction func photoLibraryBtnPressed(_ sender: Any) {
+        picker?.delegate = self
+        picker?.sourceType = .photoLibrary
+        picker?.allowsEditing = true
+        self.present(picker!, animated: true, completion: nil)
+    }
+    
+    // Saves the chosen image from either camera or library to UIImage
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: true, completion: nil)
         recipeImageView.image = info[UIImagePickerControllerOriginalImage] as? UIImage
     }
-    
-    @IBAction func photoLibraryBtnPressed(_ sender: Any) {
-        
-    }
 }
-
-
-
-
-
-
-
-
-
-
 

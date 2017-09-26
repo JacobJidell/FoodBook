@@ -16,11 +16,20 @@ class RecipesCell: UITableViewCell {
     @IBOutlet weak var foodImageView: UIImageView!
     
     // Sets the data on the different labels in a cell
-    func configureCell(foodTitle: String, foodInfo: String, timeInfo: Int, foodImage: String){
+    func configureCell(foodTitle: String, foodInfo: String, timeInfo: Int, imageKey: String){
+        
+        let storageRef = STORAGE_REF.child("\(USER_ID ?? "NO_USER")/\(imageKey).jpg")
+        
+        // Grabs the image data and converts it to UIImage and put it into the imageView
+        storageRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if error != nil { } else {
+                self.foodImageView.image = UIImage(data: data!)
+            }
+        }
+        
         self.foodTitleLbl.text = foodTitle
         self.foodInfoLbl.text = foodInfo
         self.timeInfoLbl.text = "\(timeInfo) minuter"
-        self.foodImageView.image = UIImage(named: "\(foodImage)")
     }
 
     

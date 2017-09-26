@@ -44,32 +44,56 @@ class DataService {
             for recipe in recipeSnapshot {
                 let recipeName = recipe.childSnapshot(forPath: "Name").value as! String
                 let recipeTime = recipe.childSnapshot(forPath: "Time").value as! Int
-                let recipeImageName = recipe.childSnapshot(forPath: "ImageName").value as! String
                 let recipeInfo = recipe.childSnapshot(forPath: "Information").value as! String
                 let recipeInstructions = recipe.childSnapshot(forPath: "Instruction").value as! String
                 let recipeIngredients = recipe.childSnapshot(forPath: "Ingredients").value as! String
                 let recipeCategory = recipe.childSnapshot(forPath: "Category").value as! String
-                let recipe = Recipe(recipeName: recipeName, recipeImageName: recipeImageName, recipeTime: recipeTime, recipeInformation: recipeInfo, ingredients: recipeIngredients, instructions: recipeInstructions, category: recipeCategory)
+                let imageURL = recipe.childSnapshot(forPath: "ImageURL").value as! String
+                let recipeKey = recipe.childSnapshot(forPath: "Key").value as! String
+                let recipe = Recipe(recipeName: recipeName, recipeTime: recipeTime, recipeInformation: recipeInfo, ingredients: recipeIngredients, instructions: recipeInstructions, category: recipeCategory, imageURL: imageURL, key: recipeKey)
                 recipeArray.append(recipe)
             }
             handler(recipeArray)
         }
     }
     
-    // Saves data to firebase
-    func upLoadNewRecipe(recipe: Recipe) {
-        let recipeArray: [String: Any] = [
+    // Saves data and images to firebase
+    func upLoadNewRecipe(recipe: Recipe, image: UIImage) {
+        
+        var imgURL: Any?
+        let category = recipe.category
+        
+        // Generates a random key
+        let rndKey = REF.childByAutoId().key
+        
+        // Storage reference
+        let recipeImageRef = STORAGE_REF.child("\(USER_ID ?? "NO_USER")/\(rndKey).jpg")
+        
+        // Uploading the image
+        if let newImage = UIImageJPEGRepresentation(image, 0.1){
+            recipeImageRef.putData(newImage, metadata: nil, completion: { (metadata, error) in
+                if error != nil {
+                    print("Error uploading the image")
+                } else {
+                    imgURL = metadata?.downloadURL()?.absoluteString
+                    REF_CATEGORIES.child(category).child(rndKey).child("ImageURL").setValue(imgURL)
+                }
+            })
+        }
+        
+        // Create the object to send in to firebase
+        let recipeObject: [String: Any] = [
             "Category": recipe.category,
-            "ImageName": "defaultImage.png",
             "Information": recipe.recipeInformation,
             "Ingredients": recipe.ingredients,
             "Instruction": recipe.instructions,
             "Name": recipe.recipeName,
-            "Time": recipe.recipeTime
+            "Time": recipe.recipeTime,
+            "Key": rndKey
         ]
         
-        let category = recipe.category
-        REF_CATEGORIES.child(category).childByAutoId().setValue(recipeArray)
+        // Set the value into firebase
+        REF_CATEGORIES.child(category).child(rndKey).setValue(recipeObject)
     }
     
     
