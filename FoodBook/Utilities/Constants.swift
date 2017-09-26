@@ -11,13 +11,25 @@ import FirebaseAuth
 import Firebase
 
 // Database reference
-public let REF = Database.database().reference()
-public let REF_USER = REF.child(USER_ID!)
-public let REF_CATEGORIES = REF_USER.child("categories")
+let REF = Database.database().reference()
+let REF_USER = REF.child(USER_ID!)
+let REF_CATEGORIES = REF_USER.child("categories")
 
 // Authenication, User ID
-public let USER_ID = Auth.auth().currentUser?.uid
+let USER_ID = Auth.auth().currentUser?.uid
 
 // Firebase storage
-public let STORAGE = Storage.storage()
-public let STORAGE_REF = Storage.storage().reference()
+let STORAGE = Storage.storage()
+let STORAGE_REF = Storage.storage().reference()
+
+
+// All the categories
+let CATEGORIES = [
+    Category(title: "Kött", imageName: "meat.png"),
+    Category(title: "Vegetariskt", imageName: "vegetarian.png"),
+    Category(title: "Fisk", imageName: "fish.png"),
+    Category(title: "Grillat", imageName: "barbeque.png"),
+    Category(title: "Pasta", imageName: "pasta.png"),
+    Category(title: "Bakverk", imageName: "fika.png"),
+    Category(title: "Bröd", imageName: "bread.png")
+]

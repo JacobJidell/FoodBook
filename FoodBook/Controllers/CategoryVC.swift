@@ -21,7 +21,7 @@ class CategoryVC: UIViewController {
     
     // On click, perform segue to RecipeVC with the sender category
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let category = DataService.instance.getCategories()[indexPath.row]
+        let category = CATEGORIES[indexPath.row]
         performSegue(withIdentifier: "RecipeVC", sender: category)
         
     }
@@ -39,14 +39,14 @@ extension CategoryVC: UITableViewDataSource, UITableViewDelegate {
     
     // Get the length of the category array and have it as rows.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DataService.instance.getCategories().count
+        return CATEGORIES.count
     }
     
     // Resuing cells to prevent further lag
     // Getting the categories at the specific index and updates the view for that cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell") as? CategoryCell {
-            let category = DataService.instance.getCategories()[indexPath.row]
+            let category = CATEGORIES[indexPath.row]
             cell.updateViews(category: category)
             return cell
         } else {

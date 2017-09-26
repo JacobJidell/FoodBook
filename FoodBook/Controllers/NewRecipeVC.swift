@@ -19,7 +19,7 @@ class NewRecipeVC: UIViewController, UITextViewDelegate {
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var recipeImageView: UIImageView!
     
-    var pickerValue: String = String(DataService.instance.getCategories()[0].title)
+    var pickerValue: String = String(CATEGORIES[0].title)
     var picker: UIImagePickerController? = UIImagePickerController()
     
     
@@ -87,17 +87,17 @@ extension NewRecipeVC: UIPickerViewDelegate, UIPickerViewDataSource {
     
     // Shows the number of rows in the picker
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return DataService.instance.getCategories().count
+        return CATEGORIES.count
     }
     
     // Shows the title for the corresponding row
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return DataService.instance.getCategories()[row].title
+        return CATEGORIES[row].title
     }
     
     // Sets the pickerValue as the current active value in the picker
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerValue = String(DataService.instance.getCategories()[row].title)
+        pickerValue = String(CATEGORIES[row].title)
     }
 }
 

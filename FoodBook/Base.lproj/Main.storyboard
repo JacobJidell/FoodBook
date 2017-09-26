@@ -498,7 +498,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdC-fC-4MJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="379" height="667.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="379" height="651"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INGREDIENSER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8E-XY-GS3">
                                                 <rect key="frame" x="15" y="287.5" width="123" height="24"/>
@@ -516,15 +516,15 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GÖR SÅ HÄR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQl-jj-lAe">
-                                                <rect key="frame" x="15" y="484" width="103" height="24"/>
+                                                <rect key="frame" x="15" y="467.5" width="103" height="24"/>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5C-hT-Wcw">
-                                                <rect key="frame" x="25" y="319.5" width="329" height="139.5"/>
-                                                <string key="text">300gr spaghetti                                             150gr rökt fläsk                                        0,5dl vispgrädde                                                1 finhackad vitläksklyfta                                     3dl riven gratängost                                     Smör, salt och peppar</string>
-                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                <rect key="frame" x="25" y="319.5" width="329" height="123"/>
+                                                <string key="text">300gr spaghetti                                                          150gr rökt fläsk                                                               0,5dl vispgrädde                                                       1 finhackad vitläksklyfta                                                3dl riven gratängost                                                  Smör, salt och peppar</string>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -535,7 +535,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="200" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhy-2p-stv">
-                                                <rect key="frame" x="20" y="516" width="339" height="143.5"/>
+                                                <rect key="frame" x="20" y="499.5" width="339" height="143.5"/>
                                                 <string key="text">Koka spaghettin. Skär fläsket i små tärningar. Stek fläsket knaprigt i smör i en stekpanna. Vispa ihop grädde, salt, vitlök och hälften av osten. Rör ner fläsk och ostblandningen i den kokta spaghettin och rör kraftigt till en krämig konsistens. Strö över resten av osten och peppar. Servera pastan med äggula.</string>
                                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
                                                 <nil key="textColor"/>

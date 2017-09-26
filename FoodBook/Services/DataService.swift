@@ -14,22 +14,6 @@ var categoryTitleSender: String?
 class DataService {
     static let instance = DataService()
     
-    // All the categories
-    private let Categories = [
-        Category(title: "Kött", imageName: "meat.png"),
-        Category(title: "Vegetariskt", imageName: "vegetarian.png"),
-        Category(title: "Fisk", imageName: "fish.png"),
-        Category(title: "Grillat", imageName: "barbeque.png"),
-        Category(title: "Pasta", imageName: "pasta.png"),
-        Category(title: "Bakverk", imageName: "fika.png"),
-        Category(title: "Bröd", imageName: "bread.png")
-    ]
-    
-    // Grabs the categories
-    func getCategories() -> [Category] {
-        return Categories
-    }
-    
     // Grabs the data from firebase
     // If something is equal nil, it's using @escaping, which quits the function and prevents crash
     // The object we're getting from the dataSnapshot is all the data we're getting from that node
