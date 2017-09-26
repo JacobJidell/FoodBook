@@ -14,6 +14,7 @@ class RecipesVC: UIViewController{
     @IBOutlet weak var recipeTable: UITableView!
     
     var recipesArray = [Recipe]()
+    var refresherCtrl: UIRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,29 @@ class RecipesVC: UIViewController{
             activeRecipeVC.activeRecipe = sender as? Recipe
         }
     }
-
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // Removes data from firebase and storage when sliding the cell
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let chosenRecipe: Recipe = recipesArray[indexPath.row]
+            DataService.instance.removeFromFirebase(recipe: chosenRecipe)
+            tableView.reloadData()
+            refreshTableView()
+        }
+    }
+    
+    // Refreshes the tableview
+    @objc func refreshTableView() {
+        DataService.instance.getAllRecipes { (returnedRecipeArray) in
+            self.recipesArray = returnedRecipeArray
+            self.recipeTable.reloadData()
+            self.refresherCtrl.endRefreshing()
+        }
+    }
 }
 
 extension RecipesVC: UITableViewDelegate, UITableViewDataSource {

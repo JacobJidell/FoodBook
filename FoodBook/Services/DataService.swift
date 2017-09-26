@@ -96,6 +96,23 @@ class DataService {
         REF_CATEGORIES.child(category).child(rndKey).setValue(recipeObject)
     }
     
+    // Removes the data from firebase and Storage
+    func removeFromFirebase(recipe: Recipe) {
+        // Removes the data from firebase
+        REF_CATEGORIES.child(recipe.category).child(recipe.key).setValue(nil)
+        
+        let recipeImageRef = STORAGE_REF.child("\(USER_ID ?? "NO_USER")/\(recipe.key).jpg")
+        
+        // Delete the file
+        recipeImageRef.delete { error in
+            if error != nil {
+                // Uh-oh, an error occurred!
+            } else {
+                // File deleted successfully
+            }
+        }
+        
+    }
     
     
 }
