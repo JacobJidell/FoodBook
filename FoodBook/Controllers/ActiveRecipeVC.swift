@@ -35,5 +35,4 @@ class ActiveRecipeVC: UIViewController {
         instructionLbl.text =  activeRecipe.instructions
         ingredientsLbl.text = activeRecipe.ingredients
     }
-
 }

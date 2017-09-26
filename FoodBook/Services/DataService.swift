@@ -95,9 +95,6 @@ class DataService {
                 // File deleted successfully
             }
         }
-        
     }
-    
-    
 }
 

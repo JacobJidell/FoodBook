@@ -92,8 +92,7 @@ extension RecipesVC: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell") as? RecipesCell else { return UITableViewCell() }
         let recipe = recipesArray[indexPath.row]
         
-        cell.configureCell(foodTitle: recipe.recipeName, foodInfo: recipe.recipeInformation,
-                           timeInfo: recipe.recipeTime, imageKey: recipe.key)
+        cell.configureCell(foodTitle: recipe.recipeName, foodInfo: recipe.recipeInformation, timeInfo: recipe.recipeTime, imageKey: recipe.key)
         return cell
     }
 }
