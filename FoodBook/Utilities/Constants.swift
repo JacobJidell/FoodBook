@@ -25,11 +25,11 @@ let STORAGE_REF = Storage.storage().reference()
 
 // All the categories
 let CATEGORIES = [
-    Category(title: "Kött", imageName: "meat.png"),
-    Category(title: "Vegetariskt", imageName: "vegetarian.png"),
-    Category(title: "Fisk", imageName: "fish.png"),
-    Category(title: "Grillat", imageName: "barbeque.png"),
-    Category(title: "Pasta", imageName: "pasta.png"),
-    Category(title: "Bakverk", imageName: "fika.png"),
-    Category(title: "Bröd", imageName: "bread.png")
+    Category(title: "Kött", imageName: "meat.jpg"),
+    Category(title: "Vegetariskt", imageName: "vegetarian.jpg"),
+    Category(title: "Fisk", imageName: "fish.jpg"),
+    Category(title: "Grillat", imageName: "barbeque.jpg"),
+    Category(title: "Pasta", imageName: "pasta.jpg"),
+    Category(title: "Bakverk", imageName: "fika.jpg"),
+    Category(title: "Bröd", imageName: "bread.jpg")
 ]

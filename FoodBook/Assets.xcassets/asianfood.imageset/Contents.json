@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "asianfood.png",
+      "filename" : "asianfood.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "asianfood@2x.png",
+      "filename" : "asianfood@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "asianfood@3x.png",
+      "filename" : "asianfood@3x.jpg",
       "scale" : "3x"
     }
   ],

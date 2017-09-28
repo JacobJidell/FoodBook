@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "fish.png",
+      "filename" : "fish.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fish@2x.png",
+      "filename" : "fish@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fish@3x.png",
+      "filename" : "fish@3x.jpg",
       "scale" : "3x"
     }
   ],

@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "fika.png",
+      "filename" : "fika.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fika@2x.png",
+      "filename" : "fika@2x.jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "fika@3x.png",
+      "filename" : "fika@3x.jpg",
       "scale" : "3x"
     }
   ],
