@@ -10,8 +10,8 @@ import Foundation
 
 struct Category {
     
-    var title: String
-    var imageName: String
+    public private(set) var title: String
+    public private(set) var imageName: String
     
     init(title: String, imageName: String) {
         self.title = title

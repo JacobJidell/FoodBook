@@ -10,14 +10,14 @@ import Foundation
 
 struct Recipe {
     
-    var recipeName: String
-    var recipeTime: Int
-    var recipeInformation: String
-    var ingredients: String
-    var instructions: String
-    var category: String
-    var imageURL: String
-    var key: String
+    public private(set) var recipeName: String
+    public private(set) var recipeTime: Int
+    public private(set) var recipeInformation: String
+    public private(set) var ingredients: String
+    public private(set) var instructions: String
+    public private(set) var category: String
+    public private(set) var imageURL: String
+    public private(set) var key: String
     
     init(recipeName: String, recipeTime: Int, recipeInformation: String,
          ingredients: String, instructions: String, category: String, imageURL: String, key: String) {
